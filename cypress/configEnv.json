@@ -1,0 +1,11 @@
+{
+    "url": {},
+    "user": {},
+    "db": {
+        "user": "",
+        "password": "",
+        "host": "",
+        "database": "",
+        "port": 5555
+    }
+}

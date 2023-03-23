@@ -1,0 +1,47 @@
+{
+  "name": "mypress",
+  "version": "1.0.0",
+  "description": "Cypress12+BDD Cucumber",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "node cypress/cypress-runner-open.js",
+    "cy:ci": "node cypress/cypress-runner-ci.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/masadaark/Mypress.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/masadaark/Mypress/issues"
+  },
+  "homepage": "https://github.com/masadaark/Mypress#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
+    "@deepakvishwakarma/cucumber-json-formatter": "^0.0.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "@testing-library/cypress": "^9.0.0",
+    "big.js": "^6.2.1",
+    "cypress": "^12.8.1",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-localstorage-commands": "^2.2.2",
+    "dayjs": "^1.11.7"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/integration/**/*.{js,ts}",
+    "filterSpecs": true,
+    "omitFiltered": true,
+    "json": {
+      "enabled": true,
+      "output": "cypress/report-cucumber-json-by-test-suite/cucumber-report.json",
+      "formatter": "node",
+      "args": [
+        "./node_modules/@deepakvishwakarma/cucumber-json-formatter/lib/main.js"
+      ]
+    }
+  },
+  "dependencies": {
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  }
+}
