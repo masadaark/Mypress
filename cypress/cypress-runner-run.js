@@ -1,6 +1,6 @@
 const cypress = require('cypress');
-import envConfig from './configEnv.json'
-const env = envConfig.db;
+const tags = process.argv[2] ? process.argv[2] : '@regression-test'
+const feature = process.argv[3] ? process.argv[3] : '**/*.feature'
 
 const { specPattern } = {
   specPattern: {
@@ -17,12 +17,21 @@ const { specPattern } = {
 };
 
 async function runTests() {
-  await cypress.open({
-    env,
+  await cypress.run({
+    env:`TAGS=${tags}`,
+    spec:`${feature}`,
     e2e: {
       specPattern,
     },
   });
 }
 
-runTests();
+runTests().then((response) => {
+  if (response.totalFailed > 0) {
+    console.error("Scenario failed: " + response.totalFailed)
+    process.exit(1)
+  } else {
+    process.exit(0)
+  }
+})
+;
