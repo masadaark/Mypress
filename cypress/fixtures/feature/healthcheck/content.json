@@ -1,0 +1,27 @@
+{
+    "apiPath": "/api/test/abc",
+    "method": "POST",
+    "scenarios": [
+        {
+            "tcNo": [
+                1
+            ],
+            "paramType": "query",
+            "request": {
+                "ids": [
+                    1
+                ],
+                "names": {
+                    "id": 1,
+                    "name": "John"
+                }
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "tata": "gay"
+                }
+            }
+        }
+    ]
+}

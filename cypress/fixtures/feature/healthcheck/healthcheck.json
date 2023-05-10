@@ -1,0 +1,40 @@
+{
+    "apiPath": "/stringnumbers",
+    "method": "get",
+    "scenarios": [
+        {
+            "tcNo": [
+                1
+            ],
+            "request": {
+                "headers": {
+                    "userId": 1
+                },
+                "body": {}
+            },
+            "response": {
+                "status": 200,
+                "body": {
+                    "username": "1000"
+                }
+            }
+        },
+        {
+            "tcNo": [
+                2
+            ],
+            "request": {
+                "headers": {
+                    "userId": 1
+                },
+                "body": {}
+            },
+            "response": {
+                "status": 200,
+                "body":  {
+                    "username": "1000"
+                }
+            }
+        }
+    ]
+}

@@ -1,2 +1,1 @@
-# Mypress
-Cypress12+BDD Cucumber
+Indian Tech is the GOAT.

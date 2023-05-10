@@ -1,0 +1,17 @@
+{
+    "sql": "select * from core_bank.loan l where l.id = ?",
+    "scenarios": [
+        {
+            "tcNo": [1],
+            "value": 1,
+            "expect": [
+                {
+                    "column": "id",
+                    "value": [
+                        1
+                    ]
+                }
+            ]
+        }
+    ]
+}

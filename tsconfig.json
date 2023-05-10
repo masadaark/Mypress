@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
+    "baseUrl": "./cypress/integration/src"
+  },
+  "include": [
+    "**/*.ts",
+    "cypress.config.js",
+    "cypress/runner-config.js",
+    "cypress/plugins/index.js",
+    "cypress/plugins/db_connection.js",
+    "cypress/support/e2e.ts"
+  ]
+}

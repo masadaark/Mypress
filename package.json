@@ -1,32 +1,42 @@
 {
   "name": "mypress",
   "version": "1.0.0",
-  "description": "Cypress12+BDD Cucumber",
+  "description": "Indian Tech is the GOAT.",
   "main": "index.js",
   "scripts": {
-    "cy:open": "node cypress/cypress-runner-open.js",
-    "cy:ci": "node cypress/cypress-runner-ci.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "node cypress/cypress-runner-open.js",
+    "cypress:run": "node cypress/cypress-runner-run.js",
+    "cypress:ci": "node cypress/cypress-runner-ci.js",
+    "cypress:report": "node cucumber-html-report.js",
+    "cypress:eslint": "npx eslint **/cypress/integration/**"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/masadaark/Mypress.git"
+    "url": "git@git.ntbx.tech:csi-automate/indianguy.git"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/masadaark/Mypress/issues"
-  },
-  "homepage": "https://github.com/masadaark/Mypress#readme",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^15.1.0",
-    "@deepakvishwakarma/cucumber-json-formatter": "^0.0.3",
-    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
-    "@testing-library/cypress": "^9.0.0",
-    "big.js": "^6.2.1",
-    "cypress": "^12.8.1",
-    "cypress-file-upload": "^5.0.8",
-    "cypress-localstorage-commands": "^2.2.2",
-    "dayjs": "^1.11.7"
+    "@badeball/cypress-cucumber-preprocessor": "16.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "2.2.0",
+    "@cypress/eslint-plugin-json": "^3.2.3",
+    "@deepakvishwakarma/cucumber-json-formatter": "0.0.3",
+    "@esbuild-plugins/node-modules-polyfill": "0.2.2",
+    "@testing-library/cypress": "9.0.0",
+    "cypress": "12.10.0",
+    "cypress-localstorage-commands": "2.2.3",
+    "cypress-postgres": "1.1.1",
+    "esbuild": "0.17.18",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-plugin-chai-friendly": "0.7.2",
+    "eslint-plugin-cucumber": "2.0.0",
+    "eslint-plugin-cypress": "2.13.2",
+    "eslint-plugin-react": "7.32.2",
+    "typescript": "5.0.4"
+  },
+  "dependencies": {
+    "big.js": "6.2.1"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": "cypress/integration/**/*.{js,ts}",
@@ -40,8 +50,5 @@
         "./node_modules/@deepakvishwakarma/cucumber-json-formatter/lib/main.js"
       ]
     }
-  },
-  "dependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
   }
 }

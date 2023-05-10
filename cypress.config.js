@@ -1,23 +1,25 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
-  viewportWidth: 2560,
-  viewportHeight: 1440,
+  numTestsKeptInMemory: 50,
   video: false,
-  numTestsKeptInMemory: 0,
   screenshotOnRunFailure: false,
-  defaultCommandTimeout: 15000,
-  pageLoadTimeout: 15000,
-  requestTimeout: 15000,
-  responseTimeout: 15000,
-  recoverFromRendererCrashes: true,
-  chromeWebSecurity:false,
+  defaultCommandTimeout: 3000,
+  requestTimeout: 3000,
+  responseTimeout: 3000,
   e2e: {
+    supportFile:false,
     specPattern: ["cypress/integration/**/*.feature"],
-    setupNodeEvents(on, config) {
-      return require('./cypress/plugins/index.js')(on, config);
+    baseUrl: 'http://localhost:85', 
+    db : {
+      "user": "",
+      "password":"",
+      "host": "",
+      "database": "",
+      "port": 5432
     },
-  }
-});
-
-
+    setupNodeEvents(on, config) {
+      return require('./cypress/plugins/index.js')(on, config)
+    },
+  },
+})
